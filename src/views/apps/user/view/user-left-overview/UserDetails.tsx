@@ -16,6 +16,9 @@ import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 import CustomAvatar from '@core/components/mui/Avatar'
 
+import Map from 'react-map-gl/maplibre'
+// import 'maplibre-gl/dist/maplibre-gl.css'
+
 // Vars
 const userData = {
   firstName: 'Seth',

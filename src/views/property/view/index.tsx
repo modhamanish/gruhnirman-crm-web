@@ -13,7 +13,7 @@ import Grid from '@mui/material/Grid2'
 // Component Imports
 import CustomTabList from '@core/components/mui/TabList'
 
-const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactElement } }) => {
+const PropertyView = ({ tabContentList }: { tabContentList: { [key: string]: ReactElement } }) => {
   // States
   const [activeTab, setActiveTab] = useState('overview')
 
@@ -55,4 +55,4 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
   )
 }
 
-export default UserRight
+export default PropertyView

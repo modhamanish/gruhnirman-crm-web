@@ -4,17 +4,17 @@ import dynamic from 'next/dynamic'
 import Grid from '@mui/material/Grid2'
 
 // Server Action Imports
-import PropertyLeftOverview from '@views/property/view/user-left-overview'
-import PropertyView from '@/views/property/view/user-right'
+import PropertyLeftOverview from '@views/property/view/property-left-overview'
+import PropertyView from '@/views/property/view'
 import { PricingPlanType } from '@/types/pages/pricingTypes'
 import { ReactElement } from 'react'
 
 // Dynamic Imports
-const OverViewTab = dynamic(() => import('@views/apps/user/view/user-right/overview'))
-const SecurityTab = dynamic(() => import('@views/apps/user/view/user-right/security'))
-const BillingPlans = dynamic(() => import('@views/apps/user/view/user-right/billing-plans'))
-const NotificationsTab = dynamic(() => import('@views/apps/user/view/user-right/notifications'))
-const ConnectionsTab = dynamic(() => import('@views/apps/user/view/user-right/connections'))
+const OverViewTab = dynamic(() => import('@views/property/view/overview'))
+const SecurityTab = dynamic(() => import('@views/property/view/security'))
+const BillingPlans = dynamic(() => import('@views/property/view/billing-plans'))
+const NotificationsTab = dynamic(() => import('@views/property/view/notifications'))
+const ConnectionsTab = dynamic(() => import('@views/property/view/connections'))
 
 // Vars
 const tabContentList = (data?: PricingPlanType[]): { [key: string]: ReactElement } => ({

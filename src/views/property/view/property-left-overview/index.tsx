@@ -2,17 +2,13 @@
 import Grid from '@mui/material/Grid2'
 
 // Component Imports
-import UserDetails from './UserDetails'
-import UserPlan from './UserPlan'
+import PropertyDetails from './PropertyDetails'
 
 const UserLeftOverview = () => {
   return (
     <Grid container spacing={4}>
       <Grid size={{ xs: 12 }}>
-        <UserDetails />
-      </Grid>
-      <Grid size={{ xs: 12 }}>
-        <UserPlan />
+        <PropertyDetails />
       </Grid>
     </Grid>
   )

@@ -14,24 +14,23 @@ import type { ThemeColor } from '@core/types'
 import EditUserInfo from '@components/dialogs/edit-user-info'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
-import CustomAvatar from '@core/components/mui/Avatar'
 
 // Vars
-const userData = {
-  firstName: 'Seth',
-  lastName: 'Hallam',
-  userName: '@shallamb',
-  billingEmail: 'shallamb@gmail.com',
-  status: 'active',
-  role: 'Subscriber',
-  taxId: 'Tax-8894',
-  contact: '+1 (234) 464-0600',
-  language: ['English'],
-  country: 'France',
-  useAsBillingAddress: true
+const propertyData = {
+  image: 'https://i.ibb.co/qLh88whN/Screenshot-2026-02-04-at-11-10-02-PM.png',
+  propertyName: 'Tulsi Residency',
+  category: 'Residential',
+  propertyType: 'Tenament',
+  squareFeet: '92 Var',
+  price: '45,00,000',
+  landmark: 'Tulsi Residency, Ghanteshwer, Rajkot.',
+  lat: '22.3421061',
+  long: '69.511283',
+  brochure: '',
+  youTubeLink: ''
 }
 
-const UserDetails = () => {
+const PropertyDetails = () => {
   // Vars
   const buttonProps = (children: string, color: ThemeColor, variant: ButtonProps['variant']): ButtonProps => ({
     children,
@@ -46,30 +45,10 @@ const UserDetails = () => {
           <div className='flex flex-col gap-6'>
             <div className='flex items-center justify-center flex-col gap-4'>
               <div className='flex flex-col items-center gap-4'>
-                <CustomAvatar alt='user-profile' src='/images/avatars/1.png' variant='rounded' size={120} />
-                <Typography variant='h5'>{`${userData.firstName} ${userData.lastName}`}</Typography>
+                <img height={120} src={propertyData.image} alt={propertyData.propertyName} />
+                <Typography variant='h5'>{propertyData.propertyName}</Typography>
               </div>
-              <Chip label='Author' color='secondary' size='small' variant='tonal' />
-            </div>
-            <div className='flex items-center justify-around flex-wrap gap-4'>
-              <div className='flex items-center gap-4'>
-                <CustomAvatar variant='rounded' color='primary' skin='light'>
-                  <i className='tabler-checkbox' />
-                </CustomAvatar>
-                <div>
-                  <Typography variant='h5'>1.23k</Typography>
-                  <Typography>Task Done</Typography>
-                </div>
-              </div>
-              <div className='flex items-center gap-4'>
-                <CustomAvatar variant='rounded' color='primary' skin='light'>
-                  <i className='tabler-briefcase' />
-                </CustomAvatar>
-                <div>
-                  <Typography variant='h5'>568</Typography>
-                  <Typography>Project Done</Typography>
-                </div>
-              </div>
+              <Chip label={propertyData.category} color='secondary' size='small' variant='tonal' />
             </div>
           </div>
           <div>
@@ -78,51 +57,51 @@ const UserDetails = () => {
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Username:
+                  Name:
                 </Typography>
-                <Typography>{userData.userName}</Typography>
+                <Typography>{propertyData.propertyName}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Billing Email:
+                  Category:
                 </Typography>
-                <Typography>{userData.billingEmail}</Typography>
+                <Typography>{propertyData.category}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Status
+                  Property Type:
                 </Typography>
-                <Typography color='text.primary'>{userData.status}</Typography>
+                <Typography>{propertyData.propertyType}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Role:
+                  Square Feet:
                 </Typography>
-                <Typography color='text.primary'>{userData.role}</Typography>
+                <Typography>{propertyData.squareFeet}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Tax ID:
+                  Price:
                 </Typography>
-                <Typography color='text.primary'>{userData.taxId}</Typography>
+                <Typography>{propertyData.price}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Contact:
+                  Landmark:
                 </Typography>
-                <Typography color='text.primary'>{userData.contact}</Typography>
+                <Typography>{propertyData.landmark}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Language:
+                  YouTube Link:
                 </Typography>
-                <Typography color='text.primary'>{userData.language}</Typography>
+                <Typography>{propertyData.youTubeLink}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
-                  Country:
+                  Brochure:
                 </Typography>
-                <Typography color='text.primary'>{userData.country}</Typography>
+                <Typography>{propertyData.brochure}</Typography>
               </div>
             </div>
           </div>
@@ -131,7 +110,7 @@ const UserDetails = () => {
               element={Button}
               elementProps={buttonProps('Edit', 'primary', 'contained')}
               dialog={EditUserInfo}
-              dialogProps={{ data: userData }}
+              dialogProps={{ data: propertyData }}
             />
             <OpenDialogOnElementClick
               element={Button}
@@ -146,4 +125,4 @@ const UserDetails = () => {
   )
 }
 
-export default UserDetails
+export default PropertyDetails
